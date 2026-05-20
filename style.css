@@ -255,7 +255,7 @@ a { color: inherit; text-decoration: none; }
 .hl-indent   { padding-left: 2rem; }
 .hl-indent-2 { padding-left: 4rem; }
 
-.hl-ai { font-weight: 700; }
+.hl-ai { font-weight: 700; color: var(--text); }
 
 .scroll-hint {
   font-family: var(--font-mono);
