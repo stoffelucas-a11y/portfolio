@@ -8,10 +8,16 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.08 }
+  { threshold: 0.08, rootMargin: '0px 0px -6% 0px' }
 );
 
-document.querySelectorAll('.reveal-section').forEach((el) => observer.observe(el));
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+// Header gets a hairline once the page has moved
+const head = document.querySelector('.site-head');
+const onScroll = () => head.classList.toggle('is-scrolled', window.scrollY > 24);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
 
 // Hide broken image icons — placeholder cells stay clean
 document.querySelectorAll('img').forEach((img) => {
